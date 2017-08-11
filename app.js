@@ -78,9 +78,14 @@ Test this function by hand in the console to get it working, and when you think 
 // TODO: Write your code here
 var testArray = [2,3,4]; //eslint-disable-line
 function sumArray(testArray){ //eslint-disable-line
-  var total = 0;
+  var resultArray = [];
+  //sum(testArray[0],testArray[1]) = [answer, message]
+  result = sum(testArray[i],testArray[i + 1])[0];
+  resultArray.push(result);
   for (var i = 0; i < testArray.length; i++) {
-    var total = total + testArray[i];
+    //1st result = testArray[0]+testArray[1]
+    //2nd result =
+    //add testArray[0] + testArray[1]; result + testArray[2]; result + testArray[3]; result + testArray[4]; etc.
   }
   return[total, '2,3,4 was passed in as an array of numbers, and 9 is their sum.'];
 }
