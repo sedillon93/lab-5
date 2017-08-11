@@ -10,8 +10,8 @@ For TODO item, be sure to change it to say DONE when you have successfully compl
 // DONE
 function sum(a,b){ //eslint-disable-line
   var result = a + b;
-  var output = 'The sum of ' + a + ' and ' + b + ' is ' + result + '.';
-  return [result, output];
+  var message = 'The sum of ' + a + ' and ' + b + ' is ' + result + '.';
+  return [result, message];
 }
 
 // DONE
@@ -28,8 +28,8 @@ Test this function by hand in the console to get it working, and when you think 
 // DONE
 function multiply(a,b){ //eslint-disable-line
   var product = a * b;
-  var output = 'The product of ' + a + ' and ' + b + ' is ' + product + '.';
-  return [product, output];
+  var message = 'The product of ' + a + ' and ' + b + ' is ' + product + '.';
+  return [product, message];
   console.log(product);
   console.log(output);
 }
@@ -58,9 +58,9 @@ function sumAndMultiply(a,b,c){ //eslint-disable-line
   //productResult = [product of a * b, message(see above)]
   var finalProduct = multiply(productResult[0],c);;
   //finalProduct = [product of productResult*c, message]
-  var sumOutput = a + ' and ' + b + ' and ' + c + ' sum to ' + finalSum[0] + '.';
-  var productOutput = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + finalProduct[0] + '.';
-  return [finalSum[0], finalProduct[0], sumOutput, productOutput];
+  var sumMessage = a + ' and ' + b + ' and ' + c + ' sum to ' + finalSum[0] + '.';
+  var productMessage = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + finalProduct[0] + '.';
+  return [finalSum[0], finalProduct[0], sumMessage, productMessage];
 }
 
 //DONE
@@ -75,17 +75,18 @@ Write a function called sumArray() that takes in an array of numbers as its sing
 IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To do addition, use your sum() function that you've already created. You're going to have to be resourceful to figure out how to do this.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
-// TODO: Write your code here
+// DONE
 var testArray = [2,3,4]; //eslint-disable-line
 function sumArray(testArray){ //eslint-disable-line
   var total = 0;
   for (var i = 0; i < testArray.length; i++){
     total = sum(testArray[i],total)[0];
   }
-  return[total, testArray.join(',') + ' was passed in as an array of numbers, and ' + total + ' is their sum.'];
+  var message = testArray.join(',') + ' was passed in as an array of numbers, and ' + total + ' is their sum.';
+  return [total, message];
 }
 
-// TODO: Here is the test for sumArray(); uncomment it to run it
+// DONE
 testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
@@ -99,10 +100,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(testArray){ //eslint-disable-line
-
+  var totalProduct = multiply(testArray[0], testArray[1])[0];
+  console.log(totalProduct);
+  for (var i = 2; i < testArray.length; i++) {
+    totalProduct = multiply(testArray[i],totalProduct)[0];
+  }
+  console.log(totalProduct);
+  var message = 'The numbers ' + testArray.join(',') + ' have a product of ' + totalProduct + '.';
+  return [totalProduct, message];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(2,3,4);
+testMultiplyArray(2,3,4);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
