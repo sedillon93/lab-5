@@ -80,12 +80,17 @@ var testArray = [2,3,4]; //eslint-disable-line
 function sumArray(testArray){ //eslint-disable-line
   var resultArray = [];
   //sum(testArray[0],testArray[1]) = [answer, message]
-  result = sum(testArray[i],testArray[i + 1])[0];
+  result = sum(testArray[0],testArray[1])[0];
   resultArray.push(result);
   for (var i = 0; i < testArray.length; i++) {
-    //1st result = testArray[0]+testArray[1]
-    //2nd result =
-    //add testArray[0] + testArray[1]; result + testArray[2]; result + testArray[3]; result + testArray[4]; etc.
+    sum(resultArray[i],testArray[i + 2]);
+    //[1,2,3,4,5]
+    //1 + 2 = 3; resultArray[3]
+    //i = 0: resultArray[0] = 3, testArray[2] = 3; 3 + 3 = 6; resultArray[3, 6]
+    //i = 1: resultArray[1] = 6, testArray[3] = 4; 6 + 4 = 10; resultArray[3,6,10]
+    //i = 2 resultArray[2] = 10, testArray[4] = 5; 10 + 5 = 15; resultArray[3,6,10,15]
+    var allResults = resultArray.push(total);
+    var total = allResults[testArray.length - 1];
   }
   return[total, '2,3,4 was passed in as an array of numbers, and 9 is their sum.'];
 }
