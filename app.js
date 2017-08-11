@@ -78,22 +78,11 @@ Test this function by hand in the console to get it working, and when you think 
 // TODO: Write your code here
 var testArray = [2,3,4]; //eslint-disable-line
 function sumArray(testArray){ //eslint-disable-line
-  var resultArray = [];
-  var total;
-  //sum(testArray[0],testArray[1]) = [answer, message]
-  result = sum(testArray[0],testArray[1])[0];
-  resultArray.push(result);
-  for (var i = 0; i < testArray.length; i++) {
-    sum(resultArray[i],testArray[i + 2]);
-    //[1,2,3,4,5]
-    //1 + 2 = 3; resultArray[3]
-    //i = 0: resultArray[0] = 3, testArray[2] = 3; 3 + 3 = 6; resultArray[3, 6]
-    //i = 1: resultArray[1] = 6, testArray[3] = 4; 6 + 4 = 10; resultArray[3,6,10]
-    //i = 2 resultArray[2] = 10, testArray[4] = 5; 10 + 5 = 15; resultArray[3,6,10,15]
-    var allResults = resultArray.push(total);
-    var total = allResults[testArray.length - 1];
+  var total = 0;
+  for (var i = 0; i < testArray.length; i++){
+    total = sum(testArray[i],total)[0];
   }
-  return[total, testArray.join(', ') + ' was passed in as an array of numbers, and ' + total + ' is their sum.'];
+  return[total, testArray.join(',') + ' was passed in as an array of numbers, and ' + total + ' is their sum.'];
 }
 
 // TODO: Here is the test for sumArray(); uncomment it to run it
